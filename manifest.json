@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+  "name": "Twitch Picture-in-picture",
+  "description": "Right-click on Twitch to pop the video out into picture-in-picture",
+  "version": "1.0",
+  "homepage_url": "https://github.com/noelleleigh/twitch-pip",
+  "permissions": [
+    "https://www.twitch.tv/*",
+    "contextMenus",
+    "activeTab"
+  ],
+  "background": {
+    "scripts": [
+      "background.js"
+    ],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.twitch.tv/*"],
+      "js": ["contentScript.js"]
+    }
+  ],
+  "icons": {
+    "48": "icons/icon48.png"
+  }
+}
